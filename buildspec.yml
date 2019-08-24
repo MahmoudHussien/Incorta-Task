@@ -10,6 +10,7 @@ phases:
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
+      - apt-get install docker -y
       - service docker start
       - echo Build started on `date`
       - echo Building the Docker image...          
